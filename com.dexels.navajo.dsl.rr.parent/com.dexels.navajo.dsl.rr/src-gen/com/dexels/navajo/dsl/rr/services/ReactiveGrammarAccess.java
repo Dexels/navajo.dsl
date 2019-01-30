@@ -40,25 +40,25 @@ public class ReactiveGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.dexels.navajo.dsl.rr.Reactive.Greeting");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cHelloKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cAapAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cAapIDTerminalRuleCall_1_0 = (RuleCall)cAapAssignment_1.eContents().get(0);
 		private final Keyword cExclamationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//Greeting:
-		//	'Hello' name=ID '!';
+		//	'Hello' aap=ID '!';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Hello' name=ID '!'
+		//'Hello' aap=ID '!'
 		public Group getGroup() { return cGroup; }
 		
 		//'Hello'
 		public Keyword getHelloKeyword_0() { return cHelloKeyword_0; }
 		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//aap=ID
+		public Assignment getAapAssignment_1() { return cAapAssignment_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getAapIDTerminalRuleCall_1_0() { return cAapIDTerminalRuleCall_1_0; }
 		
 		//'!'
 		public Keyword getExclamationMarkKeyword_2() { return cExclamationMarkKeyword_2; }
@@ -119,7 +119,7 @@ public class ReactiveGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Greeting:
-	//	'Hello' name=ID '!';
+	//	'Hello' aap=ID '!';
 	public GreetingElements getGreetingAccess() {
 		return pGreeting;
 	}

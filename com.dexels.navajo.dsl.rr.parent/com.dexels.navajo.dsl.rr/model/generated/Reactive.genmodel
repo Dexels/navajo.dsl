@@ -10,7 +10,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Reactive.ecore#//Model/greetings"/>
     </genClasses>
     <genClasses ecoreClass="Reactive.ecore#//Greeting">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Reactive.ecore#//Greeting/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Reactive.ecore#//Greeting/aap"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

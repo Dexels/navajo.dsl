@@ -33,7 +33,7 @@ public class ReactiveParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, ReactiveGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getGreetingAccess().getGroup(), "rule__Greeting__Group__0");
 			builder.put(grammarAccess.getModelAccess().getGreetingsAssignment(), "rule__Model__GreetingsAssignment");
-			builder.put(grammarAccess.getGreetingAccess().getNameAssignment_1(), "rule__Greeting__NameAssignment_1");
+			builder.put(grammarAccess.getGreetingAccess().getAapAssignment_1(), "rule__Greeting__AapAssignment_1");
 		}
 	}
 	

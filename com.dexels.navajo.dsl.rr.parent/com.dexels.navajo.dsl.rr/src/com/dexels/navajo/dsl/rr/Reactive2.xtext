@@ -1,7 +1,6 @@
 grammar com.dexels.navajo.dsl.rr.Reactive with org.eclipse.xtext.common.Terminals
 
 generate reactive "http://www.dexels.com/navajo/dsl/rr/Reactive"
-import "platform:/resource/com.dexels.navajo.dsl.rr/model/Expression.ecore"
 
 Model:
 	greetings+=Greeting*;

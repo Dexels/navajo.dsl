@@ -356,31 +356,31 @@ public class InternalReactiveParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Greeting__Group__1__Impl"
-    // InternalReactive.g:141:1: rule__Greeting__Group__1__Impl : ( ( rule__Greeting__NameAssignment_1 ) ) ;
+    // InternalReactive.g:141:1: rule__Greeting__Group__1__Impl : ( ( rule__Greeting__AapAssignment_1 ) ) ;
     public final void rule__Greeting__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalReactive.g:145:1: ( ( ( rule__Greeting__NameAssignment_1 ) ) )
-            // InternalReactive.g:146:1: ( ( rule__Greeting__NameAssignment_1 ) )
+            // InternalReactive.g:145:1: ( ( ( rule__Greeting__AapAssignment_1 ) ) )
+            // InternalReactive.g:146:1: ( ( rule__Greeting__AapAssignment_1 ) )
             {
-            // InternalReactive.g:146:1: ( ( rule__Greeting__NameAssignment_1 ) )
-            // InternalReactive.g:147:2: ( rule__Greeting__NameAssignment_1 )
+            // InternalReactive.g:146:1: ( ( rule__Greeting__AapAssignment_1 ) )
+            // InternalReactive.g:147:2: ( rule__Greeting__AapAssignment_1 )
             {
-             before(grammarAccess.getGreetingAccess().getNameAssignment_1()); 
-            // InternalReactive.g:148:2: ( rule__Greeting__NameAssignment_1 )
-            // InternalReactive.g:148:3: rule__Greeting__NameAssignment_1
+             before(grammarAccess.getGreetingAccess().getAapAssignment_1()); 
+            // InternalReactive.g:148:2: ( rule__Greeting__AapAssignment_1 )
+            // InternalReactive.g:148:3: rule__Greeting__AapAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__Greeting__NameAssignment_1();
+            rule__Greeting__AapAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getGreetingAccess().getNameAssignment_1()); 
+             after(grammarAccess.getGreetingAccess().getAapAssignment_1()); 
 
             }
 
@@ -513,9 +513,9 @@ public class InternalReactiveParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__Model__GreetingsAssignment"
 
 
-    // $ANTLR start "rule__Greeting__NameAssignment_1"
-    // InternalReactive.g:198:1: rule__Greeting__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__Greeting__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Greeting__AapAssignment_1"
+    // InternalReactive.g:198:1: rule__Greeting__AapAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Greeting__AapAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -526,9 +526,9 @@ public class InternalReactiveParser extends AbstractInternalContentAssistParser 
             // InternalReactive.g:203:2: ( RULE_ID )
             // InternalReactive.g:204:3: RULE_ID
             {
-             before(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getGreetingAccess().getAapIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0()); 
+             after(grammarAccess.getGreetingAccess().getAapIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -547,7 +547,7 @@ public class InternalReactiveParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Greeting__NameAssignment_1"
+    // $ANTLR end "rule__Greeting__AapAssignment_1"
 
     // Delegated rules
 

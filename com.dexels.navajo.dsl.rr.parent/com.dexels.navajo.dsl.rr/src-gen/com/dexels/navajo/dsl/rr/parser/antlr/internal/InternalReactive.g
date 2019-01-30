@@ -118,9 +118,9 @@ ruleGreeting returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
+				lv_aap_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_aap_1_0, grammarAccess.getGreetingAccess().getAapIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -128,8 +128,8 @@ ruleGreeting returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"name",
-						lv_name_1_0,
+						"aap",
+						lv_aap_1_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)

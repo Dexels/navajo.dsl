@@ -144,9 +144,9 @@ rule__Greeting__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGreetingAccess().getNameAssignment_1()); }
-	(rule__Greeting__NameAssignment_1)
-	{ after(grammarAccess.getGreetingAccess().getNameAssignment_1()); }
+	{ before(grammarAccess.getGreetingAccess().getAapAssignment_1()); }
+	(rule__Greeting__AapAssignment_1)
+	{ after(grammarAccess.getGreetingAccess().getAapAssignment_1()); }
 )
 ;
 finally {
@@ -195,15 +195,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Greeting__NameAssignment_1
+rule__Greeting__AapAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getGreetingAccess().getAapIDTerminalRuleCall_1_0()); }
 		RULE_ID
-		{ after(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0()); }
+		{ after(grammarAccess.getGreetingAccess().getAapIDTerminalRuleCall_1_0()); }
 	)
 ;
 finally {

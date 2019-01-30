@@ -229,37 +229,37 @@ public class InternalReactiveParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGreeting"
-    // InternalReactive.g:107:1: ruleGreeting returns [EObject current=null] : (otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '!' ) ;
+    // InternalReactive.g:107:1: ruleGreeting returns [EObject current=null] : (otherlv_0= 'Hello' ( (lv_aap_1_0= RULE_ID ) ) otherlv_2= '!' ) ;
     public final EObject ruleGreeting() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_name_1_0=null;
+        Token lv_aap_1_0=null;
         Token otherlv_2=null;
 
 
         	enterRule();
 
         try {
-            // InternalReactive.g:113:2: ( (otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '!' ) )
-            // InternalReactive.g:114:2: (otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '!' )
+            // InternalReactive.g:113:2: ( (otherlv_0= 'Hello' ( (lv_aap_1_0= RULE_ID ) ) otherlv_2= '!' ) )
+            // InternalReactive.g:114:2: (otherlv_0= 'Hello' ( (lv_aap_1_0= RULE_ID ) ) otherlv_2= '!' )
             {
-            // InternalReactive.g:114:2: (otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '!' )
-            // InternalReactive.g:115:3: otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '!'
+            // InternalReactive.g:114:2: (otherlv_0= 'Hello' ( (lv_aap_1_0= RULE_ID ) ) otherlv_2= '!' )
+            // InternalReactive.g:115:3: otherlv_0= 'Hello' ( (lv_aap_1_0= RULE_ID ) ) otherlv_2= '!'
             {
             otherlv_0=(Token)match(input,11,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getGreetingAccess().getHelloKeyword_0());
             		
-            // InternalReactive.g:119:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalReactive.g:120:4: (lv_name_1_0= RULE_ID )
+            // InternalReactive.g:119:3: ( (lv_aap_1_0= RULE_ID ) )
+            // InternalReactive.g:120:4: (lv_aap_1_0= RULE_ID )
             {
-            // InternalReactive.g:120:4: (lv_name_1_0= RULE_ID )
-            // InternalReactive.g:121:5: lv_name_1_0= RULE_ID
+            // InternalReactive.g:120:4: (lv_aap_1_0= RULE_ID )
+            // InternalReactive.g:121:5: lv_aap_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
+            lv_aap_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
 
-            					newLeafNode(lv_name_1_0, grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0());
+            					newLeafNode(lv_aap_1_0, grammarAccess.getGreetingAccess().getAapIDTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
@@ -267,8 +267,8 @@ public class InternalReactiveParser extends AbstractInternalAntlrParser {
             					}
             					setWithLastConsumed(
             						current,
-            						"name",
-            						lv_name_1_0,
+            						"aap",
+            						lv_aap_1_0,
             						"org.eclipse.xtext.common.Terminals.ID");
             				
 

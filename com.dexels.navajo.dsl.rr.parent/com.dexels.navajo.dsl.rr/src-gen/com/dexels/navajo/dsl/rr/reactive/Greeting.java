@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.dexels.navajo.dsl.rr.reactive.Greeting#getName <em>Name</em>}</li>
+ *   <li>{@link com.dexels.navajo.dsl.rr.reactive.Greeting#getAap <em>Aap</em>}</li>
  * </ul>
  *
  * @see com.dexels.navajo.dsl.rr.reactive.ReactivePackage#getGreeting()
@@ -24,29 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface Greeting extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Aap</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Aap</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see com.dexels.navajo.dsl.rr.reactive.ReactivePackage#getGreeting_Name()
+   * @return the value of the '<em>Aap</em>' attribute.
+   * @see #setAap(String)
+   * @see com.dexels.navajo.dsl.rr.reactive.ReactivePackage#getGreeting_Aap()
    * @model
    * @generated
    */
-  String getName();
+  String getAap();
 
   /**
-   * Sets the value of the '{@link com.dexels.navajo.dsl.rr.reactive.Greeting#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.dexels.navajo.dsl.rr.reactive.Greeting#getAap <em>Aap</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Aap</em>' attribute.
+   * @see #getAap()
    * @generated
    */
-  void setName(String value);
+  void setAap(String value);
 
 } // Greeting

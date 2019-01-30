@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.dexels.navajo.dsl.rr.reactive.impl.GreetingImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.dexels.navajo.dsl.rr.reactive.impl.GreetingImpl#getAap <em>Aap</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,24 +29,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeting
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getAap() <em>Aap</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getAap()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String AAP_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getAap() <em>Aap</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getAap()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String aap = AAP_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,9 +74,9 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public String getAap()
   {
-    return name;
+    return aap;
   }
 
   /**
@@ -84,12 +84,12 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public void setAap(String newAap)
   {
-    String oldName = name;
-    name = newName;
+    String oldAap = aap;
+    aap = newAap;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ReactivePackage.GREETING__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, ReactivePackage.GREETING__AAP, oldAap, aap));
   }
 
   /**
@@ -102,8 +102,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case ReactivePackage.GREETING__NAME:
-        return getName();
+      case ReactivePackage.GREETING__AAP:
+        return getAap();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,8 +118,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case ReactivePackage.GREETING__NAME:
-        setName((String)newValue);
+      case ReactivePackage.GREETING__AAP:
+        setAap((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,8 +135,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case ReactivePackage.GREETING__NAME:
-        setName(NAME_EDEFAULT);
+      case ReactivePackage.GREETING__AAP:
+        setAap(AAP_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -152,8 +152,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case ReactivePackage.GREETING__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case ReactivePackage.GREETING__AAP:
+        return AAP_EDEFAULT == null ? aap != null : !AAP_EDEFAULT.equals(aap);
     }
     return super.eIsSet(featureID);
   }
@@ -169,8 +169,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (aap: ");
+    result.append(aap);
     result.append(')');
     return result.toString();
   }

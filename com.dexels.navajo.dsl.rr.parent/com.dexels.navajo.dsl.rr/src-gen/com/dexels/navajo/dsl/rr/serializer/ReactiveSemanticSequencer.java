@@ -49,15 +49,15 @@ public class ReactiveSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Greeting returns Greeting
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     aap=ID
 	 */
 	protected void sequence_Greeting(ISerializationContext context, Greeting semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ReactivePackage.Literals.GREETING__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ReactivePackage.Literals.GREETING__NAME));
+			if (transientValues.isValueTransient(semanticObject, ReactivePackage.Literals.GREETING__AAP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ReactivePackage.Literals.GREETING__AAP));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getGreetingAccess().getAapIDTerminalRuleCall_1_0(), semanticObject.getAap());
 		feeder.finish();
 	}
 	

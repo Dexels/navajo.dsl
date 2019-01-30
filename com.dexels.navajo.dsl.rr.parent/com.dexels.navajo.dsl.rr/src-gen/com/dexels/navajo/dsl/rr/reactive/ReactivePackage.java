@@ -96,13 +96,13 @@ public interface ReactivePackage extends EPackage
   int GREETING = 1;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Aap</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GREETING__NAME = 0;
+  int GREETING__AAP = 0;
 
   /**
    * The number of structural features of the '<em>Greeting</em>' class.
@@ -146,15 +146,15 @@ public interface ReactivePackage extends EPackage
   EClass getGreeting();
 
   /**
-   * Returns the meta object for the attribute '{@link com.dexels.navajo.dsl.rr.reactive.Greeting#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.dexels.navajo.dsl.rr.reactive.Greeting#getAap <em>Aap</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.dexels.navajo.dsl.rr.reactive.Greeting#getName()
+   * @return the meta object for the attribute '<em>Aap</em>'.
+   * @see com.dexels.navajo.dsl.rr.reactive.Greeting#getAap()
    * @see #getGreeting()
    * @generated
    */
-  EAttribute getGreeting_Name();
+  EAttribute getGreeting_Aap();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -208,12 +208,12 @@ public interface ReactivePackage extends EPackage
     EClass GREETING = eINSTANCE.getGreeting();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Aap</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GREETING__NAME = eINSTANCE.getGreeting_Name();
+    EAttribute GREETING__AAP = eINSTANCE.getGreeting_Aap();
 
   }
 
