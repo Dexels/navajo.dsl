@@ -1,0 +1,9 @@
+grammar com.dexels.navajo.dsl.rr.Reactive with org.eclipse.xtext.common.Terminals
+
+generate reactive "http://www.dexels.com/navajo/dsl/rr/Reactive"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
