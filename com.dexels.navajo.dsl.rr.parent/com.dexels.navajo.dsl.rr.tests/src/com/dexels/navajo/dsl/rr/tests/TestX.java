@@ -5,7 +5,7 @@ import org.eclipse.xtext.testing.InjectWith;
 import org.eclipse.xtext.testing.XtextRunner;
 import org.eclipse.xtext.testing.extensions.InjectionExtension;
 import org.eclipse.xtext.testing.util.ParseHelper;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 
@@ -16,7 +16,7 @@ import com.google.inject.Inject;
 @RunWith(XtextRunner.class)
 @ExtendWith(InjectionExtension.class)
 @InjectWith(ReactiveInjectorProvider.class)
-class TestX {
+public class TestX {
 
 	@Inject
 	private ParseHelper<Model> parseHelper;
@@ -30,7 +30,7 @@ class TestX {
 	@Test
 	public void test() throws Exception {
 		parse("'aap'").getParameters().stream().forEach(e->{
-			System.err.println(">>>>> "+e.getOperations().stream().findFirst().get());
+//			System.err.println(">>>>> "+e.getOperations().stream().findFirst().get());
 			System.err.println("::: "+e.getValueString());
 //			e.getOperations()
 		});
