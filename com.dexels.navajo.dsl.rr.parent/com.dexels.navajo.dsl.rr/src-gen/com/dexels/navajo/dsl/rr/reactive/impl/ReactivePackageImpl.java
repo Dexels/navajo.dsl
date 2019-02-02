@@ -3,12 +3,13 @@
  */
 package com.dexels.navajo.dsl.rr.reactive.impl;
 
-import com.dexels.navajo.dsl.rr.reactive.Greeting;
+import com.dexels.navajo.dsl.expression.ExpressionPackage;
+
 import com.dexels.navajo.dsl.rr.reactive.Model;
+import com.dexels.navajo.dsl.rr.reactive.OrExpression;
 import com.dexels.navajo.dsl.rr.reactive.ReactiveFactory;
 import com.dexels.navajo.dsl.rr.reactive.ReactivePackage;
 
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -35,7 +36,7 @@ public class ReactivePackageImpl extends EPackageImpl implements ReactivePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass greetingEClass = null;
+  private EClass orExpressionEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -85,6 +86,9 @@ public class ReactivePackageImpl extends EPackageImpl implements ReactivePackage
 
     isInited = true;
 
+    // Initialize simple dependencies
+    ExpressionPackage.eINSTANCE.eClass();
+
     // Create package meta-data objects
     theReactivePackage.createPackageContents();
 
@@ -115,7 +119,7 @@ public class ReactivePackageImpl extends EPackageImpl implements ReactivePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Greetings()
+  public EReference getModel_Expressions()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -125,9 +129,9 @@ public class ReactivePackageImpl extends EPackageImpl implements ReactivePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getGreeting()
+  public EClass getOrExpression()
   {
-    return greetingEClass;
+    return orExpressionEClass;
   }
 
   /**
@@ -135,9 +139,9 @@ public class ReactivePackageImpl extends EPackageImpl implements ReactivePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGreeting_Aap()
+  public EReference getOrExpression_Left()
   {
-    return (EAttribute)greetingEClass.getEStructuralFeatures().get(0);
+    return (EReference)orExpressionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -171,10 +175,10 @@ public class ReactivePackageImpl extends EPackageImpl implements ReactivePackage
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__GREETINGS);
+    createEReference(modelEClass, MODEL__EXPRESSIONS);
 
-    greetingEClass = createEClass(GREETING);
-    createEAttribute(greetingEClass, GREETING__AAP);
+    orExpressionEClass = createEClass(OR_EXPRESSION);
+    createEReference(orExpressionEClass, OR_EXPRESSION__LEFT);
   }
 
   /**
@@ -201,18 +205,22 @@ public class ReactivePackageImpl extends EPackageImpl implements ReactivePackage
     setNsPrefix(eNS_PREFIX);
     setNsURI(eNS_URI);
 
+    // Obtain other dependent packages
+    ExpressionPackage theExpressionPackage = (ExpressionPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
+
     // Create type parameters
 
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    orExpressionEClass.getESuperTypes().add(theExpressionPackage.getExpression());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Greetings(), this.getGreeting(), null, "greetings", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Expressions(), theExpressionPackage.getExpression(), null, "expressions", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(greetingEClass, Greeting.class, "Greeting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGreeting_Aap(), ecorePackage.getEString(), "aap", null, 0, 1, Greeting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(orExpressionEClass, OrExpression.class, "OrExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOrExpression_Left(), theExpressionPackage.getExpression(), null, "left", null, 0, 1, OrExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

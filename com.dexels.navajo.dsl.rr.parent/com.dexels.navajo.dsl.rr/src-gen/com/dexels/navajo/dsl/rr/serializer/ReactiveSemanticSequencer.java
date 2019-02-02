@@ -3,8 +3,13 @@
  */
 package com.dexels.navajo.dsl.rr.serializer;
 
-import com.dexels.navajo.dsl.rr.reactive.Greeting;
+import com.dexels.navajo.dsl.expression.ExistsTmlReference;
+import com.dexels.navajo.dsl.expression.Expression;
+import com.dexels.navajo.dsl.expression.ExpressionPackage;
+import com.dexels.navajo.dsl.expression.FunctionCall;
+import com.dexels.navajo.dsl.expression.TmlReference;
 import com.dexels.navajo.dsl.rr.reactive.Model;
+import com.dexels.navajo.dsl.rr.reactive.OrExpression;
 import com.dexels.navajo.dsl.rr.reactive.ReactivePackage;
 import com.dexels.navajo.dsl.rr.services.ReactiveGrammarAccess;
 import com.google.inject.Inject;
@@ -15,9 +20,7 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
-import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
 public class ReactiveSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -31,13 +34,68 @@ public class ReactiveSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		ParserRule rule = context.getParserRule();
 		Action action = context.getAssignedAction();
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
-		if (epackage == ReactivePackage.eINSTANCE)
+		if (epackage == ExpressionPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case ReactivePackage.GREETING:
-				sequence_Greeting(context, (Greeting) semanticObject); 
+			case ExpressionPackage.EXISTS_TML_REFERENCE:
+				sequence_ExistsTmlExpression(context, (ExistsTmlReference) semanticObject); 
 				return; 
+			case ExpressionPackage.EXPRESSION:
+				if (rule == grammarAccess.getAdditiveExpressionRule()) {
+					sequence_AdditiveExpression(context, (Expression) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getAndExpressionRule()) {
+					sequence_AndExpression(context, (Expression) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getDateLiteralRule()) {
+					sequence_DateLiteral(context, (Expression) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getEqualityExpressionRule()) {
+					sequence_EqualityExpression(context, (Expression) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getLiteralRule()) {
+					sequence_Literal(context, (Expression) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getMultiplicativeExpressionRule()) {
+					sequence_MultiplicativeExpression(context, (Expression) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getOrExpressionRule()
+						|| action == grammarAccess.getOrExpressionAccess().getOrExpressionLeftAction_1_0()) {
+					sequence_OrExpression(context, (Expression) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getPrimaryExpressionRule()) {
+					sequence_PrimaryExpression(context, (Expression) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getUnaryExpressionRule()) {
+					sequence_PrimaryExpression_UnaryExpression(context, (Expression) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getRelationalExpressionRule()) {
+					sequence_RelationalExpression(context, (Expression) semanticObject); 
+					return; 
+				}
+				else break;
+			case ExpressionPackage.FUNCTION_CALL:
+				sequence_FunctionCall(context, (FunctionCall) semanticObject); 
+				return; 
+			case ExpressionPackage.TML_REFERENCE:
+				sequence_TmlExpression(context, (TmlReference) semanticObject); 
+				return; 
+			}
+		else if (epackage == ReactivePackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
 			case ReactivePackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
+				return; 
+			case ReactivePackage.OR_EXPRESSION:
+				sequence_OrExpression(context, (OrExpression) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -46,19 +104,100 @@ public class ReactiveSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     Greeting returns Greeting
+	 *     AdditiveExpression returns Expression
 	 *
 	 * Constraint:
-	 *     aap=ID
+	 *     (parameters+=MultiplicativeExpression parameters+=MultiplicativeExpression*)
 	 */
-	protected void sequence_Greeting(ISerializationContext context, Greeting semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ReactivePackage.Literals.GREETING__AAP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ReactivePackage.Literals.GREETING__AAP));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGreetingAccess().getAapIDTerminalRuleCall_1_0(), semanticObject.getAap());
-		feeder.finish();
+	protected void sequence_AdditiveExpression(ISerializationContext context, Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AndExpression returns Expression
+	 *
+	 * Constraint:
+	 *     (parameters+=EqualityExpression (operations+=AND parameters+=EqualityExpression)*)
+	 */
+	protected void sequence_AndExpression(ISerializationContext context, Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     DateLiteral returns Expression
+	 *
+	 * Constraint:
+	 *     {Expression}
+	 */
+	protected void sequence_DateLiteral(ISerializationContext context, Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     EqualityExpression returns Expression
+	 *
+	 * Constraint:
+	 *     (
+	 *         parameters+=RelationalExpression 
+	 *         ((operations+=EQUALSEQUALS parameters+=RelationalExpression) | (operations+=NEQUALS parameters+=RelationalExpression))?
+	 *     )
+	 */
+	protected void sequence_EqualityExpression(ISerializationContext context, Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ExistsTmlExpression returns ExistsTmlReference
+	 *
+	 * Constraint:
+	 *     (absolute?=TML_SEPARATOR? param?=AT? elements+=PathElement elements+=PathElement*)
+	 */
+	protected void sequence_ExistsTmlExpression(ISerializationContext context, ExistsTmlReference semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     FunctionCall returns FunctionCall
+	 *
+	 * Constraint:
+	 *     (name=FunctionName parameters+=OrExpression? parameters+=OrExpression*)
+	 */
+	protected void sequence_FunctionCall(ISerializationContext context, FunctionCall semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Literal returns Expression
+	 *
+	 * Constraint:
+	 *     (
+	 *         valueString=LITERALSTRING | 
+	 *         (operations+=FORALL valueString=LITERALSTRING parameters+=OrExpression) | 
+	 *         parameters+=FunctionCall | 
+	 *         (expressionType=CURLYOPEN parameters+=OrExpression? parameters+=OrExpression*) | 
+	 *         elements+=NULL | 
+	 *         elements+=TODAY | 
+	 *         elements+=TRUE | 
+	 *         elements+=FALSE | 
+	 *         parameters+=TmlExpression | 
+	 *         parameters+=ExistsTmlExpression | 
+	 *         parameters+=DateLiteral
+	 *     )?
+	 */
+	protected void sequence_Literal(ISerializationContext context, Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -67,9 +206,103 @@ public class ReactiveSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     greetings+=Greeting+
+	 *     expressions+=OrExpression+
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MultiplicativeExpression returns Expression
+	 *
+	 * Constraint:
+	 *     (parameters+=UnaryExpression ((operations+=MULTIPLY parameters+=UnaryExpression) | (operations+=TML_SEPARATOR parameters+=UnaryExpression))*)
+	 */
+	protected void sequence_MultiplicativeExpression(ISerializationContext context, Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     OrExpression returns Expression
+	 *     OrExpression.OrExpression_1_0 returns Expression
+	 *
+	 * Constraint:
+	 *     parameters+=AndExpression
+	 */
+	protected void sequence_OrExpression(ISerializationContext context, Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     OrExpression returns OrExpression
+	 *     OrExpression.OrExpression_1_0 returns OrExpression
+	 *
+	 * Constraint:
+	 *     (left=OrExpression_OrExpression_1_0 operations+=OR parameters+=AndExpression)
+	 */
+	protected void sequence_OrExpression(ISerializationContext context, OrExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     PrimaryExpression returns Expression
+	 *
+	 * Constraint:
+	 *     (parameters+=Literal | parameters+=OrExpression)
+	 */
+	protected void sequence_PrimaryExpression(ISerializationContext context, Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     UnaryExpression returns Expression
+	 *
+	 * Constraint:
+	 *     (parameters+=PrimaryExpression | parameters+=PrimaryExpression | parameters+=Literal | parameters+=OrExpression)
+	 */
+	protected void sequence_PrimaryExpression_UnaryExpression(ISerializationContext context, Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     RelationalExpression returns Expression
+	 *
+	 * Constraint:
+	 *     (
+	 *         parameters+=AdditiveExpression 
+	 *         (
+	 *             (operations+=LT parameters+=AdditiveExpression) | 
+	 *             (operations+=GT parameters+=AdditiveExpression) | 
+	 *             (operations+=LTEQ parameters+=AdditiveExpression) | 
+	 *             (operations+=GTEQ parameters+=AdditiveExpression)
+	 *         )?
+	 *     )
+	 */
+	protected void sequence_RelationalExpression(ISerializationContext context, Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TmlExpression returns TmlReference
+	 *
+	 * Constraint:
+	 *     (absolute?=TML_SEPARATOR? param?=AT? elements+=PathElement elements+=PathElement*)
+	 */
+	protected void sequence_TmlExpression(ISerializationContext context, TmlReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

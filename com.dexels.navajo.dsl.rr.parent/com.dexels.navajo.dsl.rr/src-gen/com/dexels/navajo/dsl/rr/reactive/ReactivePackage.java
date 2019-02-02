@@ -3,7 +3,8 @@
  */
 package com.dexels.navajo.dsl.rr.reactive;
 
-import org.eclipse.emf.ecore.EAttribute;
+import com.dexels.navajo.dsl.expression.ExpressionPackage;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -68,13 +69,13 @@ public interface ReactivePackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Greetings</b></em>' containment reference list.
+   * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__GREETINGS = 0;
+  int MODEL__EXPRESSIONS = 0;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -86,32 +87,113 @@ public interface ReactivePackage extends EPackage
   int MODEL_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link com.dexels.navajo.dsl.rr.reactive.impl.GreetingImpl <em>Greeting</em>}' class.
+   * The meta object id for the '{@link com.dexels.navajo.dsl.rr.reactive.impl.OrExpressionImpl <em>Or Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.dexels.navajo.dsl.rr.reactive.impl.GreetingImpl
-   * @see com.dexels.navajo.dsl.rr.reactive.impl.ReactivePackageImpl#getGreeting()
+   * @see com.dexels.navajo.dsl.rr.reactive.impl.OrExpressionImpl
+   * @see com.dexels.navajo.dsl.rr.reactive.impl.ReactivePackageImpl#getOrExpression()
    * @generated
    */
-  int GREETING = 1;
+  int OR_EXPRESSION = 1;
 
   /**
-   * The feature id for the '<em><b>Aap</b></em>' attribute.
+   * The feature id for the '<em><b>Parent</b></em>' container reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GREETING__AAP = 0;
+  int OR_EXPRESSION__PARENT = ExpressionPackage.EXPRESSION__PARENT;
 
   /**
-   * The number of structural features of the '<em>Greeting</em>' class.
+   * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GREETING_FEATURE_COUNT = 1;
+  int OR_EXPRESSION__PARAMETERS = ExpressionPackage.EXPRESSION__PARAMETERS;
+
+  /**
+   * The feature id for the '<em><b>Operations</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__OPERATIONS = ExpressionPackage.EXPRESSION__OPERATIONS;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__ELEMENTS = ExpressionPackage.EXPRESSION__ELEMENTS;
+
+  /**
+   * The feature id for the '<em><b>Subliteral</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__SUBLITERAL = ExpressionPackage.EXPRESSION__SUBLITERAL;
+
+  /**
+   * The feature id for the '<em><b>Value String</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__VALUE_STRING = ExpressionPackage.EXPRESSION__VALUE_STRING;
+
+  /**
+   * The feature id for the '<em><b>Expression Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__EXPRESSION_TYPE = ExpressionPackage.EXPRESSION__EXPRESSION_TYPE;
+
+  /**
+   * The feature id for the '<em><b>Path Sequence</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__PATH_SEQUENCE = ExpressionPackage.EXPRESSION__PATH_SEQUENCE;
+
+  /**
+   * The feature id for the '<em><b>Exists Path Sequence</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__EXISTS_PATH_SEQUENCE = ExpressionPackage.EXPRESSION__EXISTS_PATH_SEQUENCE;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__LEFT = ExpressionPackage.EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Or Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION_FEATURE_COUNT = ExpressionPackage.EXPRESSION_FEATURE_COUNT + 1;
 
 
   /**
@@ -125,36 +207,36 @@ public interface ReactivePackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.dexels.navajo.dsl.rr.reactive.Model#getGreetings <em>Greetings</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.dexels.navajo.dsl.rr.reactive.Model#getExpressions <em>Expressions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Greetings</em>'.
-   * @see com.dexels.navajo.dsl.rr.reactive.Model#getGreetings()
+   * @return the meta object for the containment reference list '<em>Expressions</em>'.
+   * @see com.dexels.navajo.dsl.rr.reactive.Model#getExpressions()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Greetings();
+  EReference getModel_Expressions();
 
   /**
-   * Returns the meta object for class '{@link com.dexels.navajo.dsl.rr.reactive.Greeting <em>Greeting</em>}'.
+   * Returns the meta object for class '{@link com.dexels.navajo.dsl.rr.reactive.OrExpression <em>Or Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Greeting</em>'.
-   * @see com.dexels.navajo.dsl.rr.reactive.Greeting
+   * @return the meta object for class '<em>Or Expression</em>'.
+   * @see com.dexels.navajo.dsl.rr.reactive.OrExpression
    * @generated
    */
-  EClass getGreeting();
+  EClass getOrExpression();
 
   /**
-   * Returns the meta object for the attribute '{@link com.dexels.navajo.dsl.rr.reactive.Greeting#getAap <em>Aap</em>}'.
+   * Returns the meta object for the containment reference '{@link com.dexels.navajo.dsl.rr.reactive.OrExpression#getLeft <em>Left</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Aap</em>'.
-   * @see com.dexels.navajo.dsl.rr.reactive.Greeting#getAap()
-   * @see #getGreeting()
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see com.dexels.navajo.dsl.rr.reactive.OrExpression#getLeft()
+   * @see #getOrExpression()
    * @generated
    */
-  EAttribute getGreeting_Aap();
+  EReference getOrExpression_Left();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -190,30 +272,30 @@ public interface ReactivePackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Greetings</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__GREETINGS = eINSTANCE.getModel_Greetings();
+    EReference MODEL__EXPRESSIONS = eINSTANCE.getModel_Expressions();
 
     /**
-     * The meta object literal for the '{@link com.dexels.navajo.dsl.rr.reactive.impl.GreetingImpl <em>Greeting</em>}' class.
+     * The meta object literal for the '{@link com.dexels.navajo.dsl.rr.reactive.impl.OrExpressionImpl <em>Or Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.dexels.navajo.dsl.rr.reactive.impl.GreetingImpl
-     * @see com.dexels.navajo.dsl.rr.reactive.impl.ReactivePackageImpl#getGreeting()
+     * @see com.dexels.navajo.dsl.rr.reactive.impl.OrExpressionImpl
+     * @see com.dexels.navajo.dsl.rr.reactive.impl.ReactivePackageImpl#getOrExpression()
      * @generated
      */
-    EClass GREETING = eINSTANCE.getGreeting();
+    EClass OR_EXPRESSION = eINSTANCE.getOrExpression();
 
     /**
-     * The meta object literal for the '<em><b>Aap</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GREETING__AAP = eINSTANCE.getGreeting_Aap();
+    EReference OR_EXPRESSION__LEFT = eINSTANCE.getOrExpression_Left();
 
   }
 

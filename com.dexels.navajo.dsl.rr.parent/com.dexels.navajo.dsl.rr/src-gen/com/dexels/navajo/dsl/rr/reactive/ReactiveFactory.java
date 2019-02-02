@@ -33,13 +33,13 @@ public interface ReactiveFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Greeting</em>'.
+   * Returns a new object of class '<em>Or Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Greeting</em>'.
+   * @return a new object of class '<em>Or Expression</em>'.
    * @generated
    */
-  Greeting createGreeting();
+  OrExpression createOrExpression();
 
   /**
    * Returns the package supported by this factory.

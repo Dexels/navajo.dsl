@@ -11,8 +11,9 @@ import org.eclipse.xtext.testing.util.ParseHelper
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.eclipse.xtext.testing.extensions.InjectionExtension
+import org.junit.jupiter.api.^extension.ExtendWith
 
-@RunWith(XtextRunner)
 @InjectWith(ReactiveInjectorProvider)
 class ReactiveParsingTest {
 	@Inject
@@ -21,10 +22,12 @@ class ReactiveParsingTest {
 	@Test
 	def void loadModel() {
 		val result = parseHelper.parse('''
-			Hello Xtext!
+			(1+1)*2
 		''')
 		Assert.assertNotNull(result)
 		val errors = result.eResource.errors
+		result.expressions.forEach[]
+		System.err.println("Out: "+result)
 		Assert.assertTrue('''Unexpected errors: «errors.join(", ")»''', errors.isEmpty)
 	}
 }

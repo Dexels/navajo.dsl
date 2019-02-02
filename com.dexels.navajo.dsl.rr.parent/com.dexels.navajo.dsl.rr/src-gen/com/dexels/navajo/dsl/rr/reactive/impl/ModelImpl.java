@@ -3,7 +3,8 @@
  */
 package com.dexels.navajo.dsl.rr.reactive.impl;
 
-import com.dexels.navajo.dsl.rr.reactive.Greeting;
+import com.dexels.navajo.dsl.expression.Expression;
+
 import com.dexels.navajo.dsl.rr.reactive.Model;
 import com.dexels.navajo.dsl.rr.reactive.ReactivePackage;
 
@@ -29,7 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.dexels.navajo.dsl.rr.reactive.impl.ModelImpl#getGreetings <em>Greetings</em>}</li>
+ *   <li>{@link com.dexels.navajo.dsl.rr.reactive.impl.ModelImpl#getExpressions <em>Expressions</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +38,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getGreetings() <em>Greetings</em>}' containment reference list.
+   * The cached value of the '{@link #getExpressions() <em>Expressions</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGreetings()
+   * @see #getExpressions()
    * @generated
    * @ordered
    */
-  protected EList<Greeting> greetings;
+  protected EList<Expression> expressions;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,13 +73,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Greeting> getGreetings()
+  public EList<Expression> getExpressions()
   {
-    if (greetings == null)
+    if (expressions == null)
     {
-      greetings = new EObjectContainmentEList<Greeting>(Greeting.class, this, ReactivePackage.MODEL__GREETINGS);
+      expressions = new EObjectContainmentEList<Expression>(Expression.class, this, ReactivePackage.MODEL__EXPRESSIONS);
     }
-    return greetings;
+    return expressions;
   }
 
   /**
@@ -91,8 +92,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ReactivePackage.MODEL__GREETINGS:
-        return ((InternalEList<?>)getGreetings()).basicRemove(otherEnd, msgs);
+      case ReactivePackage.MODEL__EXPRESSIONS:
+        return ((InternalEList<?>)getExpressions()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -107,8 +108,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ReactivePackage.MODEL__GREETINGS:
-        return getGreetings();
+      case ReactivePackage.MODEL__EXPRESSIONS:
+        return getExpressions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -124,9 +125,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ReactivePackage.MODEL__GREETINGS:
-        getGreetings().clear();
-        getGreetings().addAll((Collection<? extends Greeting>)newValue);
+      case ReactivePackage.MODEL__EXPRESSIONS:
+        getExpressions().clear();
+        getExpressions().addAll((Collection<? extends Expression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +143,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ReactivePackage.MODEL__GREETINGS:
-        getGreetings().clear();
+      case ReactivePackage.MODEL__EXPRESSIONS:
+        getExpressions().clear();
         return;
     }
     super.eUnset(featureID);
@@ -159,8 +160,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ReactivePackage.MODEL__GREETINGS:
-        return greetings != null && !greetings.isEmpty();
+      case ReactivePackage.MODEL__EXPRESSIONS:
+        return expressions != null && !expressions.isEmpty();
     }
     return super.eIsSet(featureID);
   }

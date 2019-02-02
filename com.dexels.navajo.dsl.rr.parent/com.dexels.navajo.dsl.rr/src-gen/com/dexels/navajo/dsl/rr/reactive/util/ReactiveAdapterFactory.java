@@ -3,6 +3,8 @@
  */
 package com.dexels.navajo.dsl.rr.reactive.util;
 
+import com.dexels.navajo.dsl.expression.Expression;
+
 import com.dexels.navajo.dsl.rr.reactive.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -81,9 +83,14 @@ public class ReactiveAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseGreeting(Greeting object)
+      public Adapter caseOrExpression(OrExpression object)
       {
-        return createGreetingAdapter();
+        return createOrExpressionAdapter();
+      }
+      @Override
+      public Adapter caseExpression(Expression object)
+      {
+        return createExpressionAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -123,16 +130,31 @@ public class ReactiveAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.dexels.navajo.dsl.rr.reactive.Greeting <em>Greeting</em>}'.
+   * Creates a new adapter for an object of class '{@link com.dexels.navajo.dsl.rr.reactive.OrExpression <em>Or Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.dexels.navajo.dsl.rr.reactive.Greeting
+   * @see com.dexels.navajo.dsl.rr.reactive.OrExpression
    * @generated
    */
-  public Adapter createGreetingAdapter()
+  public Adapter createOrExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.dexels.navajo.dsl.expression.Expression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.dexels.navajo.dsl.expression.Expression
+   * @generated
+   */
+  public Adapter createExpressionAdapter()
   {
     return null;
   }

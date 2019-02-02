@@ -31,9 +31,103 @@ public class ReactiveParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, ReactiveGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getGreetingAccess().getGroup(), "rule__Greeting__Group__0");
-			builder.put(grammarAccess.getModelAccess().getGreetingsAssignment(), "rule__Model__GreetingsAssignment");
-			builder.put(grammarAccess.getGreetingAccess().getAapAssignment_1(), "rule__Greeting__AapAssignment_1");
+			builder.put(grammarAccess.getPathElementAccess().getAlternatives(), "rule__PathElement__Alternatives");
+			builder.put(grammarAccess.getEqualityExpressionAccess().getAlternatives_1(), "rule__EqualityExpression__Alternatives_1");
+			builder.put(grammarAccess.getRelationalExpressionAccess().getAlternatives_2(), "rule__RelationalExpression__Alternatives_2");
+			builder.put(grammarAccess.getMultiplicativeExpressionAccess().getAlternatives_1(), "rule__MultiplicativeExpression__Alternatives_1");
+			builder.put(grammarAccess.getUnaryExpressionAccess().getAlternatives(), "rule__UnaryExpression__Alternatives");
+			builder.put(grammarAccess.getUnaryExpressionAccess().getAlternatives_0(), "rule__UnaryExpression__Alternatives_0");
+			builder.put(grammarAccess.getPrimaryExpressionAccess().getAlternatives(), "rule__PrimaryExpression__Alternatives");
+			builder.put(grammarAccess.getLiteralAccess().getAlternatives(), "rule__Literal__Alternatives");
+			builder.put(grammarAccess.getTmlExpressionAccess().getGroup(), "rule__TmlExpression__Group__0");
+			builder.put(grammarAccess.getTmlExpressionAccess().getGroup_4(), "rule__TmlExpression__Group_4__0");
+			builder.put(grammarAccess.getExistsTmlExpressionAccess().getGroup(), "rule__ExistsTmlExpression__Group__0");
+			builder.put(grammarAccess.getExistsTmlExpressionAccess().getGroup_5(), "rule__ExistsTmlExpression__Group_5__0");
+			builder.put(grammarAccess.getOrExpressionAccess().getGroup(), "rule__OrExpression__Group__0");
+			builder.put(grammarAccess.getOrExpressionAccess().getGroup_1(), "rule__OrExpression__Group_1__0");
+			builder.put(grammarAccess.getAndExpressionAccess().getGroup(), "rule__AndExpression__Group__0");
+			builder.put(grammarAccess.getAndExpressionAccess().getGroup_1(), "rule__AndExpression__Group_1__0");
+			builder.put(grammarAccess.getEqualityExpressionAccess().getGroup(), "rule__EqualityExpression__Group__0");
+			builder.put(grammarAccess.getEqualityExpressionAccess().getGroup_1_0(), "rule__EqualityExpression__Group_1_0__0");
+			builder.put(grammarAccess.getEqualityExpressionAccess().getGroup_1_1(), "rule__EqualityExpression__Group_1_1__0");
+			builder.put(grammarAccess.getRelationalExpressionAccess().getGroup(), "rule__RelationalExpression__Group__0");
+			builder.put(grammarAccess.getRelationalExpressionAccess().getGroup_2_0(), "rule__RelationalExpression__Group_2_0__0");
+			builder.put(grammarAccess.getRelationalExpressionAccess().getGroup_2_1(), "rule__RelationalExpression__Group_2_1__0");
+			builder.put(grammarAccess.getRelationalExpressionAccess().getGroup_2_2(), "rule__RelationalExpression__Group_2_2__0");
+			builder.put(grammarAccess.getRelationalExpressionAccess().getGroup_2_3(), "rule__RelationalExpression__Group_2_3__0");
+			builder.put(grammarAccess.getAdditiveExpressionAccess().getGroup(), "rule__AdditiveExpression__Group__0");
+			builder.put(grammarAccess.getAdditiveExpressionAccess().getGroup_1(), "rule__AdditiveExpression__Group_1__0");
+			builder.put(grammarAccess.getMultiplicativeExpressionAccess().getGroup(), "rule__MultiplicativeExpression__Group__0");
+			builder.put(grammarAccess.getMultiplicativeExpressionAccess().getGroup_1_0(), "rule__MultiplicativeExpression__Group_1_0__0");
+			builder.put(grammarAccess.getMultiplicativeExpressionAccess().getGroup_1_1(), "rule__MultiplicativeExpression__Group_1_1__0");
+			builder.put(grammarAccess.getUnaryExpressionAccess().getGroup_0_0(), "rule__UnaryExpression__Group_0_0__0");
+			builder.put(grammarAccess.getUnaryExpressionAccess().getGroup_0_1(), "rule__UnaryExpression__Group_0_1__0");
+			builder.put(grammarAccess.getPrimaryExpressionAccess().getGroup_1(), "rule__PrimaryExpression__Group_1__0");
+			builder.put(grammarAccess.getFunctionCallAccess().getGroup(), "rule__FunctionCall__Group__0");
+			builder.put(grammarAccess.getFunctionCallAccess().getGroup_3(), "rule__FunctionCall__Group_3__0");
+			builder.put(grammarAccess.getDateLiteralAccess().getGroup(), "rule__DateLiteral__Group__0");
+			builder.put(grammarAccess.getLiteralAccess().getGroup_0(), "rule__Literal__Group_0__0");
+			builder.put(grammarAccess.getLiteralAccess().getGroup_2(), "rule__Literal__Group_2__0");
+			builder.put(grammarAccess.getLiteralAccess().getGroup_4(), "rule__Literal__Group_4__0");
+			builder.put(grammarAccess.getLiteralAccess().getGroup_4_2(), "rule__Literal__Group_4_2__0");
+			builder.put(grammarAccess.getModelAccess().getExpressionsAssignment(), "rule__Model__ExpressionsAssignment");
+			builder.put(grammarAccess.getTmlExpressionAccess().getAbsoluteAssignment_1(), "rule__TmlExpression__AbsoluteAssignment_1");
+			builder.put(grammarAccess.getTmlExpressionAccess().getParamAssignment_2(), "rule__TmlExpression__ParamAssignment_2");
+			builder.put(grammarAccess.getTmlExpressionAccess().getElementsAssignment_3(), "rule__TmlExpression__ElementsAssignment_3");
+			builder.put(grammarAccess.getTmlExpressionAccess().getElementsAssignment_4_1(), "rule__TmlExpression__ElementsAssignment_4_1");
+			builder.put(grammarAccess.getExistsTmlExpressionAccess().getAbsoluteAssignment_2(), "rule__ExistsTmlExpression__AbsoluteAssignment_2");
+			builder.put(grammarAccess.getExistsTmlExpressionAccess().getParamAssignment_3(), "rule__ExistsTmlExpression__ParamAssignment_3");
+			builder.put(grammarAccess.getExistsTmlExpressionAccess().getElementsAssignment_4(), "rule__ExistsTmlExpression__ElementsAssignment_4");
+			builder.put(grammarAccess.getExistsTmlExpressionAccess().getElementsAssignment_5_1(), "rule__ExistsTmlExpression__ElementsAssignment_5_1");
+			builder.put(grammarAccess.getOrExpressionAccess().getParametersAssignment_0(), "rule__OrExpression__ParametersAssignment_0");
+			builder.put(grammarAccess.getOrExpressionAccess().getOperationsAssignment_1_1(), "rule__OrExpression__OperationsAssignment_1_1");
+			builder.put(grammarAccess.getOrExpressionAccess().getParametersAssignment_1_2(), "rule__OrExpression__ParametersAssignment_1_2");
+			builder.put(grammarAccess.getAndExpressionAccess().getParametersAssignment_0(), "rule__AndExpression__ParametersAssignment_0");
+			builder.put(grammarAccess.getAndExpressionAccess().getOperationsAssignment_1_0(), "rule__AndExpression__OperationsAssignment_1_0");
+			builder.put(grammarAccess.getAndExpressionAccess().getParametersAssignment_1_1(), "rule__AndExpression__ParametersAssignment_1_1");
+			builder.put(grammarAccess.getEqualityExpressionAccess().getParametersAssignment_0(), "rule__EqualityExpression__ParametersAssignment_0");
+			builder.put(grammarAccess.getEqualityExpressionAccess().getOperationsAssignment_1_0_0(), "rule__EqualityExpression__OperationsAssignment_1_0_0");
+			builder.put(grammarAccess.getEqualityExpressionAccess().getParametersAssignment_1_0_1(), "rule__EqualityExpression__ParametersAssignment_1_0_1");
+			builder.put(grammarAccess.getEqualityExpressionAccess().getOperationsAssignment_1_1_0(), "rule__EqualityExpression__OperationsAssignment_1_1_0");
+			builder.put(grammarAccess.getEqualityExpressionAccess().getParametersAssignment_1_1_1(), "rule__EqualityExpression__ParametersAssignment_1_1_1");
+			builder.put(grammarAccess.getRelationalExpressionAccess().getParametersAssignment_1(), "rule__RelationalExpression__ParametersAssignment_1");
+			builder.put(grammarAccess.getRelationalExpressionAccess().getOperationsAssignment_2_0_0(), "rule__RelationalExpression__OperationsAssignment_2_0_0");
+			builder.put(grammarAccess.getRelationalExpressionAccess().getParametersAssignment_2_0_1(), "rule__RelationalExpression__ParametersAssignment_2_0_1");
+			builder.put(grammarAccess.getRelationalExpressionAccess().getOperationsAssignment_2_1_0(), "rule__RelationalExpression__OperationsAssignment_2_1_0");
+			builder.put(grammarAccess.getRelationalExpressionAccess().getParametersAssignment_2_1_1(), "rule__RelationalExpression__ParametersAssignment_2_1_1");
+			builder.put(grammarAccess.getRelationalExpressionAccess().getOperationsAssignment_2_2_0(), "rule__RelationalExpression__OperationsAssignment_2_2_0");
+			builder.put(grammarAccess.getRelationalExpressionAccess().getParametersAssignment_2_2_1(), "rule__RelationalExpression__ParametersAssignment_2_2_1");
+			builder.put(grammarAccess.getRelationalExpressionAccess().getOperationsAssignment_2_3_0(), "rule__RelationalExpression__OperationsAssignment_2_3_0");
+			builder.put(grammarAccess.getRelationalExpressionAccess().getParametersAssignment_2_3_1(), "rule__RelationalExpression__ParametersAssignment_2_3_1");
+			builder.put(grammarAccess.getAdditiveExpressionAccess().getParametersAssignment_0(), "rule__AdditiveExpression__ParametersAssignment_0");
+			builder.put(grammarAccess.getAdditiveExpressionAccess().getParametersAssignment_1_1(), "rule__AdditiveExpression__ParametersAssignment_1_1");
+			builder.put(grammarAccess.getMultiplicativeExpressionAccess().getParametersAssignment_0(), "rule__MultiplicativeExpression__ParametersAssignment_0");
+			builder.put(grammarAccess.getMultiplicativeExpressionAccess().getOperationsAssignment_1_0_0(), "rule__MultiplicativeExpression__OperationsAssignment_1_0_0");
+			builder.put(grammarAccess.getMultiplicativeExpressionAccess().getParametersAssignment_1_0_1(), "rule__MultiplicativeExpression__ParametersAssignment_1_0_1");
+			builder.put(grammarAccess.getMultiplicativeExpressionAccess().getOperationsAssignment_1_1_0(), "rule__MultiplicativeExpression__OperationsAssignment_1_1_0");
+			builder.put(grammarAccess.getMultiplicativeExpressionAccess().getParametersAssignment_1_1_1(), "rule__MultiplicativeExpression__ParametersAssignment_1_1_1");
+			builder.put(grammarAccess.getUnaryExpressionAccess().getParametersAssignment_0_0_1(), "rule__UnaryExpression__ParametersAssignment_0_0_1");
+			builder.put(grammarAccess.getUnaryExpressionAccess().getParametersAssignment_0_1_1(), "rule__UnaryExpression__ParametersAssignment_0_1_1");
+			builder.put(grammarAccess.getPrimaryExpressionAccess().getParametersAssignment_0(), "rule__PrimaryExpression__ParametersAssignment_0");
+			builder.put(grammarAccess.getPrimaryExpressionAccess().getParametersAssignment_1_1(), "rule__PrimaryExpression__ParametersAssignment_1_1");
+			builder.put(grammarAccess.getFunctionCallAccess().getNameAssignment_0(), "rule__FunctionCall__NameAssignment_0");
+			builder.put(grammarAccess.getFunctionCallAccess().getParametersAssignment_2(), "rule__FunctionCall__ParametersAssignment_2");
+			builder.put(grammarAccess.getFunctionCallAccess().getParametersAssignment_3_1(), "rule__FunctionCall__ParametersAssignment_3_1");
+			builder.put(grammarAccess.getLiteralAccess().getValueStringAssignment_1(), "rule__Literal__ValueStringAssignment_1");
+			builder.put(grammarAccess.getLiteralAccess().getOperationsAssignment_2_0(), "rule__Literal__OperationsAssignment_2_0");
+			builder.put(grammarAccess.getLiteralAccess().getValueStringAssignment_2_2(), "rule__Literal__ValueStringAssignment_2_2");
+			builder.put(grammarAccess.getLiteralAccess().getParametersAssignment_2_4(), "rule__Literal__ParametersAssignment_2_4");
+			builder.put(grammarAccess.getLiteralAccess().getParametersAssignment_3(), "rule__Literal__ParametersAssignment_3");
+			builder.put(grammarAccess.getLiteralAccess().getExpressionTypeAssignment_4_0(), "rule__Literal__ExpressionTypeAssignment_4_0");
+			builder.put(grammarAccess.getLiteralAccess().getParametersAssignment_4_1(), "rule__Literal__ParametersAssignment_4_1");
+			builder.put(grammarAccess.getLiteralAccess().getParametersAssignment_4_2_1(), "rule__Literal__ParametersAssignment_4_2_1");
+			builder.put(grammarAccess.getLiteralAccess().getElementsAssignment_5(), "rule__Literal__ElementsAssignment_5");
+			builder.put(grammarAccess.getLiteralAccess().getElementsAssignment_6(), "rule__Literal__ElementsAssignment_6");
+			builder.put(grammarAccess.getLiteralAccess().getElementsAssignment_7(), "rule__Literal__ElementsAssignment_7");
+			builder.put(grammarAccess.getLiteralAccess().getElementsAssignment_8(), "rule__Literal__ElementsAssignment_8");
+			builder.put(grammarAccess.getLiteralAccess().getParametersAssignment_9(), "rule__Literal__ParametersAssignment_9");
+			builder.put(grammarAccess.getLiteralAccess().getParametersAssignment_10(), "rule__Literal__ParametersAssignment_10");
+			builder.put(grammarAccess.getLiteralAccess().getParametersAssignment_11(), "rule__Literal__ParametersAssignment_11");
 		}
 	}
 	
@@ -57,7 +151,7 @@ public class ReactiveParser extends AbstractContentAssistParser {
 
 	@Override
 	protected String[] getInitialHiddenTokens() {
-		return new String[] { "RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT" };
+		return new String[] { "RULE_WS" };
 	}
 
 	public ReactiveGrammarAccess getGrammarAccess() {

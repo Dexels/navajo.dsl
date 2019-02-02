@@ -11,7 +11,7 @@
       <!-- @generated Expression -->
       <package
             uri="http://www.dexels.com/expression/1.0"
-            class="com.dexels.navajo.dsl.model.expression.ExpressionPackage"
+            class="com.dexels.navajo.dsl.expression.ExpressionPackage"
             genModel="model/Expression.genmodel"/>
    </extension>
 

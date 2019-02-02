@@ -2,11 +2,24 @@ module com.dexels.navajo.dsl.rr.GenerateReactive
 
 import org.eclipse.xtext.xtext.generator.*
 import org.eclipse.xtext.xtext.generator.model.project.*
+import org.eclipse.emf.mwe.utils.*
+import org.eclipse.emf.mwe2.ecore.*
 
 var rootPath = ".."
 
 Workflow {
 	
+	bean = StandaloneSetup {
+		scanClassPath = true
+		platformUri = "${rootPath}"
+		registerGenModelFile = "platform:/resource/com.dexels.navajo.dsl.rr/model/Expression.genmodel"
+		registerEcoreFile=  "platform:/resource/com.dexels.navajo.dsl.rr/model/Expression.ecore"
+	}
+	component = EcoreGenerator {
+	    generateCustomClasses = false
+	    genModel = "platform:/resource/com.dexels.navajo.dsl.rr/model/Expression.genmodel"
+	    srcPath = "platform:/resource/com.dexels.navajo.dsl.rr/src-gen"
+	}
 	component = XtextGenerator {
 		configuration = {
 			project = StandardProjectConfig {

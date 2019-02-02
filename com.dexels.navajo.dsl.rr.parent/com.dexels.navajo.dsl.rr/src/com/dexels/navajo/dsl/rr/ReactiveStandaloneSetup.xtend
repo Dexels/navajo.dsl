@@ -3,13 +3,14 @@
  */
 package com.dexels.navajo.dsl.rr
 
-
 /**
  * Initialization support for running Xtext languages without Equinox extension registry.
  */
 class ReactiveStandaloneSetup extends ReactiveStandaloneSetupGenerated {
 
 	def static void doSetup() {
-		new ReactiveStandaloneSetup().createInjectorAndDoEMFRegistration()
+		val reactiveStandaloneSetup = new ReactiveStandaloneSetup()
+		reactiveStandaloneSetup.createInjectorAndDoEMFRegistration()
+		
 	}
 }

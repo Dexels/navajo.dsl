@@ -14,6 +14,7 @@ public abstract class AbstractReactiveValidator extends AbstractDeclarativeValid
 	protected List<EPackage> getEPackages() {
 		List<EPackage> result = new ArrayList<EPackage>();
 		result.add(com.dexels.navajo.dsl.rr.reactive.ReactivePackage.eINSTANCE);
+		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.dexels.com/expression/1.0"));
 		return result;
 	}
 }

@@ -11,6 +11,7 @@ import com.dexels.navajo.dsl.rr.ReactiveStandaloneSetupGenerated;
 @SuppressWarnings("all")
 public class ReactiveStandaloneSetup extends ReactiveStandaloneSetupGenerated {
   public static void doSetup() {
-    new ReactiveStandaloneSetup().createInjectorAndDoEMFRegistration();
+    final ReactiveStandaloneSetup reactiveStandaloneSetup = new ReactiveStandaloneSetup();
+    reactiveStandaloneSetup.createInjectorAndDoEMFRegistration();
   }
 }

@@ -26,9 +26,181 @@ public class ReactiveSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (ruleCall.getRule() == grammarAccess.getATRule())
+			return getATToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getBRACKET_CLOSERule())
+			return getBRACKET_CLOSEToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getBRACKET_OPENRule())
+			return getBRACKET_OPENToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getCOMMARule())
+			return getCOMMAToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getCURLYCLOSERule())
+			return getCURLYCLOSEToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getHASHRule())
+			return getHASHToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getMINUSRule())
+			return getMINUSToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getNOTRule())
+			return getNOTToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getNUMBERRule())
+			return getNUMBERToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getPLUSRule())
+			return getPLUSToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getSQBRACKET_CLOSERule())
+			return getSQBRACKET_CLOSEToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getSQBRACKET_OPENRule())
+			return getSQBRACKET_OPENToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getTML_EXISTSRule())
+			return getTML_EXISTSToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getTML_SEPARATORRule())
+			return getTML_SEPARATORToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * terminal AT: '@';
+	 */
+	protected String getATToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "@";
+	}
+	
+	/**
+	 * terminal BRACKET_CLOSE:
+	 * 	')'
+	 * ;
+	 */
+	protected String getBRACKET_CLOSEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return ")";
+	}
+	
+	/**
+	 * terminal BRACKET_OPEN:
+	 * 	'('
+	 * ;
+	 */
+	protected String getBRACKET_OPENToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "(";
+	}
+	
+	/**
+	 * terminal COMMA:
+	 * 	','
+	 * ;
+	 */
+	protected String getCOMMAToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return ",";
+	}
+	
+	/**
+	 * terminal CURLYCLOSE:
+	 * 	'}'
+	 * ;
+	 */
+	protected String getCURLYCLOSEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "}";
+	}
+	
+	/**
+	 * terminal HASH:
+	 * 	'#'
+	 * ;
+	 */
+	protected String getHASHToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "#";
+	}
+	
+	/**
+	 * terminal MINUS:
+	 * 	'-'
+	 * ;
+	 */
+	protected String getMINUSToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "-";
+	}
+	
+	/**
+	 * terminal NOT: '!';
+	 */
+	protected String getNOTToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "!";
+	}
+	
+	/**
+	 * terminal NUMBER returns ecore::EBigDecimal:
+	 *   ('0'..'9')+ (DOT ('0'..'9')+)?;
+	 */
+	protected String getNUMBERToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "";
+	}
+	
+	/**
+	 * terminal PLUS:
+	 * 	'+'
+	 * ;
+	 */
+	protected String getPLUSToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "+";
+	}
+	
+	/**
+	 * terminal SQBRACKET_CLOSE:
+	 * 	']';
+	 */
+	protected String getSQBRACKET_CLOSEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "]";
+	}
+	
+	/**
+	 * terminal SQBRACKET_OPEN:
+	 * 	'[';
+	 */
+	protected String getSQBRACKET_OPENToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "[";
+	}
+	
+	/**
+	 * terminal TML_EXISTS:
+	 * 	'?';
+	 */
+	protected String getTML_EXISTSToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "?";
+	}
+	
+	/**
+	 * terminal TML_SEPARATOR:
+	 * 	'/';
+	 */
+	protected String getTML_SEPARATORToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "/";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

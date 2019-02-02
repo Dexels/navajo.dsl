@@ -66,7 +66,7 @@ public class ReactiveFactoryImpl extends EFactoryImpl implements ReactiveFactory
     switch (eClass.getClassifierID())
     {
       case ReactivePackage.MODEL: return createModel();
-      case ReactivePackage.GREETING: return createGreeting();
+      case ReactivePackage.OR_EXPRESSION: return createOrExpression();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -88,10 +88,10 @@ public class ReactiveFactoryImpl extends EFactoryImpl implements ReactiveFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Greeting createGreeting()
+  public OrExpression createOrExpression()
   {
-    GreetingImpl greeting = new GreetingImpl();
-    return greeting;
+    OrExpressionImpl orExpression = new OrExpressionImpl();
+    return orExpression;
   }
 
   /**
