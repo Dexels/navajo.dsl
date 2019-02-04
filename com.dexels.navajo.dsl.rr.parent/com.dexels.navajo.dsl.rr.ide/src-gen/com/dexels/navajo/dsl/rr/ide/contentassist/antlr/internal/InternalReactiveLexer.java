@@ -24,6 +24,7 @@ public class InternalReactiveLexer extends Lexer {
     public static final int RULE_AND=22;
     public static final int RULE_HASH=18;
     public static final int RULE_FORALL=31;
+    public static final int RULE_EQUALS=41;
     public static final int RULE_TRUE=35;
     public static final int RULE_TODAY=34;
     public static final int RULE_PLUS=11;
@@ -43,10 +44,12 @@ public class InternalReactiveLexer extends Lexer {
     public static final int RULE_COLON=38;
     public static final int RULE_NEQUALS=24;
     public static final int RULE_NUMBER=17;
+    public static final int RULE_HEADER=40;
     public static final int RULE_MINUS=13;
     public static final int RULE_MULTIPLY=29;
     public static final int RULE_LT=25;
     public static final int RULE_LTEQ=27;
+    public static final int RULE_PIPE=42;
     public static final int RULE_FALSE=36;
     public static final int RULE_BRACKET_OPEN=14;
 
@@ -752,13 +755,54 @@ public class InternalReactiveLexer extends Lexer {
     }
     // $ANTLR end "RULE_BRACKET_CLOSE"
 
+    // $ANTLR start "RULE_HEADER"
+    public final void mRULE_HEADER() throws RecognitionException {
+        try {
+            int _type = RULE_HEADER;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalReactive.g:4123:13: ( '=>' )
+            // InternalReactive.g:4123:15: '=>'
+            {
+            match("=>"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_HEADER"
+
+    // $ANTLR start "RULE_EQUALS"
+    public final void mRULE_EQUALS() throws RecognitionException {
+        try {
+            int _type = RULE_EQUALS;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalReactive.g:4125:13: ( '=' )
+            // InternalReactive.g:4125:15: '='
+            {
+            match('='); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_EQUALS"
+
     // $ANTLR start "RULE_COMMA"
     public final void mRULE_COMMA() throws RecognitionException {
         try {
             int _type = RULE_COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalReactive.g:4123:12: ( ',' )
-            // InternalReactive.g:4123:14: ','
+            // InternalReactive.g:4127:12: ( ',' )
+            // InternalReactive.g:4127:14: ','
             {
             match(','); 
 
@@ -777,8 +821,8 @@ public class InternalReactiveLexer extends Lexer {
         try {
             int _type = RULE_AND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalReactive.g:4125:10: ( 'AND' )
-            // InternalReactive.g:4125:12: 'AND'
+            // InternalReactive.g:4129:10: ( 'AND' )
+            // InternalReactive.g:4129:12: 'AND'
             {
             match("AND"); 
 
@@ -798,8 +842,8 @@ public class InternalReactiveLexer extends Lexer {
         try {
             int _type = RULE_OR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalReactive.g:4127:9: ( 'OR' )
-            // InternalReactive.g:4127:11: 'OR'
+            // InternalReactive.g:4131:9: ( 'OR' )
+            // InternalReactive.g:4131:11: 'OR'
             {
             match("OR"); 
 
@@ -819,8 +863,8 @@ public class InternalReactiveLexer extends Lexer {
         try {
             int _type = RULE_HASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalReactive.g:4129:11: ( '#' )
-            // InternalReactive.g:4129:13: '#'
+            // InternalReactive.g:4133:11: ( '#' )
+            // InternalReactive.g:4133:13: '#'
             {
             match('#'); 
 
@@ -839,8 +883,8 @@ public class InternalReactiveLexer extends Lexer {
         try {
             int _type = RULE_CURLYOPEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalReactive.g:4131:16: ( '{' )
-            // InternalReactive.g:4131:18: '{'
+            // InternalReactive.g:4135:16: ( '{' )
+            // InternalReactive.g:4135:18: '{'
             {
             match('{'); 
 
@@ -859,8 +903,8 @@ public class InternalReactiveLexer extends Lexer {
         try {
             int _type = RULE_CURLYCLOSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalReactive.g:4133:17: ( '}' )
-            // InternalReactive.g:4133:19: '}'
+            // InternalReactive.g:4137:17: ( '}' )
+            // InternalReactive.g:4137:19: '}'
             {
             match('}'); 
 
@@ -879,8 +923,8 @@ public class InternalReactiveLexer extends Lexer {
         try {
             int _type = RULE_EQUALSEQUALS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalReactive.g:4135:19: ( '==' )
-            // InternalReactive.g:4135:21: '=='
+            // InternalReactive.g:4139:19: ( '==' )
+            // InternalReactive.g:4139:21: '=='
             {
             match("=="); 
 
@@ -900,8 +944,8 @@ public class InternalReactiveLexer extends Lexer {
         try {
             int _type = RULE_NEQUALS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalReactive.g:4137:14: ( '!=' )
-            // InternalReactive.g:4137:16: '!='
+            // InternalReactive.g:4141:14: ( '!=' )
+            // InternalReactive.g:4141:16: '!='
             {
             match("!="); 
 
@@ -921,8 +965,8 @@ public class InternalReactiveLexer extends Lexer {
         try {
             int _type = RULE_PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalReactive.g:4139:11: ( '+' )
-            // InternalReactive.g:4139:13: '+'
+            // InternalReactive.g:4143:11: ( '+' )
+            // InternalReactive.g:4143:13: '+'
             {
             match('+'); 
 
@@ -936,13 +980,34 @@ public class InternalReactiveLexer extends Lexer {
     }
     // $ANTLR end "RULE_PLUS"
 
+    // $ANTLR start "RULE_PIPE"
+    public final void mRULE_PIPE() throws RecognitionException {
+        try {
+            int _type = RULE_PIPE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalReactive.g:4145:11: ( '->' )
+            // InternalReactive.g:4145:13: '->'
+            {
+            match("->"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_PIPE"
+
     // $ANTLR start "RULE_MINUS"
     public final void mRULE_MINUS() throws RecognitionException {
         try {
             int _type = RULE_MINUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalReactive.g:4141:12: ( '-' )
-            // InternalReactive.g:4141:14: '-'
+            // InternalReactive.g:4147:12: ( '-' )
+            // InternalReactive.g:4147:14: '-'
             {
             match('-'); 
 
@@ -961,8 +1026,8 @@ public class InternalReactiveLexer extends Lexer {
         try {
             int _type = RULE_MULTIPLY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalReactive.g:4143:15: ( '*' )
-            // InternalReactive.g:4143:17: '*'
+            // InternalReactive.g:4149:15: ( '*' )
+            // InternalReactive.g:4149:17: '*'
             {
             match('*'); 
 
@@ -981,8 +1046,8 @@ public class InternalReactiveLexer extends Lexer {
         try {
             int _type = RULE_LTEQ;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalReactive.g:4145:11: ( '<=' )
-            // InternalReactive.g:4145:13: '<='
+            // InternalReactive.g:4151:11: ( '<=' )
+            // InternalReactive.g:4151:13: '<='
             {
             match("<="); 
 
@@ -1002,8 +1067,8 @@ public class InternalReactiveLexer extends Lexer {
         try {
             int _type = RULE_GTEQ;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalReactive.g:4147:11: ( '>=' )
-            // InternalReactive.g:4147:13: '>='
+            // InternalReactive.g:4153:11: ( '>=' )
+            // InternalReactive.g:4153:13: '>='
             {
             match(">="); 
 
@@ -1023,8 +1088,8 @@ public class InternalReactiveLexer extends Lexer {
         try {
             int _type = RULE_LT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalReactive.g:4149:9: ( '<' )
-            // InternalReactive.g:4149:11: '<'
+            // InternalReactive.g:4155:9: ( '<' )
+            // InternalReactive.g:4155:11: '<'
             {
             match('<'); 
 
@@ -1043,8 +1108,8 @@ public class InternalReactiveLexer extends Lexer {
         try {
             int _type = RULE_GT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalReactive.g:4151:9: ( '>' )
-            // InternalReactive.g:4151:11: '>'
+            // InternalReactive.g:4157:9: ( '>' )
+            // InternalReactive.g:4157:11: '>'
             {
             match('>'); 
 
@@ -1063,8 +1128,8 @@ public class InternalReactiveLexer extends Lexer {
         try {
             int _type = RULE_DOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalReactive.g:4153:10: ( '.' )
-            // InternalReactive.g:4153:12: '.'
+            // InternalReactive.g:4159:10: ( '.' )
+            // InternalReactive.g:4159:12: '.'
             {
             match('.'); 
 
@@ -1083,10 +1148,10 @@ public class InternalReactiveLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalReactive.g:4155:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalReactive.g:4155:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalReactive.g:4161:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalReactive.g:4161:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalReactive.g:4155:11: ( '^' )?
+            // InternalReactive.g:4161:11: ( '^' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1095,7 +1160,7 @@ public class InternalReactiveLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalReactive.g:4155:11: '^'
+                    // InternalReactive.g:4161:11: '^'
                     {
                     match('^'); 
 
@@ -1113,7 +1178,7 @@ public class InternalReactiveLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalReactive.g:4155:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalReactive.g:4161:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop11:
             do {
                 int alt11=2;
@@ -1158,8 +1223,8 @@ public class InternalReactiveLexer extends Lexer {
     // $ANTLR end "RULE_ID"
 
     public void mTokens() throws RecognitionException {
-        // InternalReactive.g:1:8: ( RULE_NOT | RULE_NUMBER | RULE_WS | RULE_TRUE | RULE_FALSE | RULE_NULL | RULE_TODAY | RULE_FORALL | RULE_PARENT | RULE_AT | RULE_LITERALSTRING | RULE_COLON | RULE_SQBRACKET_OPEN | RULE_SQBRACKET_CLOSE | RULE_TML_SEPARATOR | RULE_TML_EXISTS | RULE_DOLLAR | RULE_BRACKET_OPEN | RULE_BRACKET_CLOSE | RULE_COMMA | RULE_AND | RULE_OR | RULE_HASH | RULE_CURLYOPEN | RULE_CURLYCLOSE | RULE_EQUALSEQUALS | RULE_NEQUALS | RULE_PLUS | RULE_MINUS | RULE_MULTIPLY | RULE_LTEQ | RULE_GTEQ | RULE_LT | RULE_GT | RULE_DOT | RULE_ID )
-        int alt12=36;
+        // InternalReactive.g:1:8: ( RULE_NOT | RULE_NUMBER | RULE_WS | RULE_TRUE | RULE_FALSE | RULE_NULL | RULE_TODAY | RULE_FORALL | RULE_PARENT | RULE_AT | RULE_LITERALSTRING | RULE_COLON | RULE_SQBRACKET_OPEN | RULE_SQBRACKET_CLOSE | RULE_TML_SEPARATOR | RULE_TML_EXISTS | RULE_DOLLAR | RULE_BRACKET_OPEN | RULE_BRACKET_CLOSE | RULE_HEADER | RULE_EQUALS | RULE_COMMA | RULE_AND | RULE_OR | RULE_HASH | RULE_CURLYOPEN | RULE_CURLYCLOSE | RULE_EQUALSEQUALS | RULE_NEQUALS | RULE_PLUS | RULE_PIPE | RULE_MINUS | RULE_MULTIPLY | RULE_LTEQ | RULE_GTEQ | RULE_LT | RULE_GT | RULE_DOT | RULE_ID )
+        int alt12=39;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -1296,119 +1361,140 @@ public class InternalReactiveLexer extends Lexer {
                 }
                 break;
             case 20 :
-                // InternalReactive.g:1:268: RULE_COMMA
+                // InternalReactive.g:1:268: RULE_HEADER
+                {
+                mRULE_HEADER(); 
+
+                }
+                break;
+            case 21 :
+                // InternalReactive.g:1:280: RULE_EQUALS
+                {
+                mRULE_EQUALS(); 
+
+                }
+                break;
+            case 22 :
+                // InternalReactive.g:1:292: RULE_COMMA
                 {
                 mRULE_COMMA(); 
 
                 }
                 break;
-            case 21 :
-                // InternalReactive.g:1:279: RULE_AND
+            case 23 :
+                // InternalReactive.g:1:303: RULE_AND
                 {
                 mRULE_AND(); 
 
                 }
                 break;
-            case 22 :
-                // InternalReactive.g:1:288: RULE_OR
+            case 24 :
+                // InternalReactive.g:1:312: RULE_OR
                 {
                 mRULE_OR(); 
 
                 }
                 break;
-            case 23 :
-                // InternalReactive.g:1:296: RULE_HASH
+            case 25 :
+                // InternalReactive.g:1:320: RULE_HASH
                 {
                 mRULE_HASH(); 
 
                 }
                 break;
-            case 24 :
-                // InternalReactive.g:1:306: RULE_CURLYOPEN
+            case 26 :
+                // InternalReactive.g:1:330: RULE_CURLYOPEN
                 {
                 mRULE_CURLYOPEN(); 
 
                 }
                 break;
-            case 25 :
-                // InternalReactive.g:1:321: RULE_CURLYCLOSE
+            case 27 :
+                // InternalReactive.g:1:345: RULE_CURLYCLOSE
                 {
                 mRULE_CURLYCLOSE(); 
 
                 }
                 break;
-            case 26 :
-                // InternalReactive.g:1:337: RULE_EQUALSEQUALS
+            case 28 :
+                // InternalReactive.g:1:361: RULE_EQUALSEQUALS
                 {
                 mRULE_EQUALSEQUALS(); 
 
                 }
                 break;
-            case 27 :
-                // InternalReactive.g:1:355: RULE_NEQUALS
+            case 29 :
+                // InternalReactive.g:1:379: RULE_NEQUALS
                 {
                 mRULE_NEQUALS(); 
 
                 }
                 break;
-            case 28 :
-                // InternalReactive.g:1:368: RULE_PLUS
+            case 30 :
+                // InternalReactive.g:1:392: RULE_PLUS
                 {
                 mRULE_PLUS(); 
 
                 }
                 break;
-            case 29 :
-                // InternalReactive.g:1:378: RULE_MINUS
+            case 31 :
+                // InternalReactive.g:1:402: RULE_PIPE
+                {
+                mRULE_PIPE(); 
+
+                }
+                break;
+            case 32 :
+                // InternalReactive.g:1:412: RULE_MINUS
                 {
                 mRULE_MINUS(); 
 
                 }
                 break;
-            case 30 :
-                // InternalReactive.g:1:389: RULE_MULTIPLY
+            case 33 :
+                // InternalReactive.g:1:423: RULE_MULTIPLY
                 {
                 mRULE_MULTIPLY(); 
 
                 }
                 break;
-            case 31 :
-                // InternalReactive.g:1:403: RULE_LTEQ
+            case 34 :
+                // InternalReactive.g:1:437: RULE_LTEQ
                 {
                 mRULE_LTEQ(); 
 
                 }
                 break;
-            case 32 :
-                // InternalReactive.g:1:413: RULE_GTEQ
+            case 35 :
+                // InternalReactive.g:1:447: RULE_GTEQ
                 {
                 mRULE_GTEQ(); 
 
                 }
                 break;
-            case 33 :
-                // InternalReactive.g:1:423: RULE_LT
+            case 36 :
+                // InternalReactive.g:1:457: RULE_LT
                 {
                 mRULE_LT(); 
 
                 }
                 break;
-            case 34 :
-                // InternalReactive.g:1:431: RULE_GT
+            case 37 :
+                // InternalReactive.g:1:465: RULE_GT
                 {
                 mRULE_GT(); 
 
                 }
                 break;
-            case 35 :
-                // InternalReactive.g:1:439: RULE_DOT
+            case 38 :
+                // InternalReactive.g:1:473: RULE_DOT
                 {
                 mRULE_DOT(); 
 
                 }
                 break;
-            case 36 :
-                // InternalReactive.g:1:448: RULE_ID
+            case 39 :
+                // InternalReactive.g:1:482: RULE_ID
                 {
                 mRULE_ID(); 
 
@@ -1422,19 +1508,19 @@ public class InternalReactiveLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\1\43\2\uffff\6\41\1\56\13\uffff\2\41\7\uffff\1\62\1\64\3\uffff\11\41\2\uffff\1\41\1\77\4\uffff\11\41\1\111\1\uffff\1\112\1\41\1\112\4\41\2\120\2\uffff\2\121\2\122\1\41\3\uffff\1\124\1\uffff";
+        "\1\uffff\1\43\2\uffff\6\41\1\56\12\uffff\1\61\1\uffff\2\41\4\uffff\1\65\1\uffff\1\67\1\71\3\uffff\11\41\5\uffff\1\41\1\104\6\uffff\11\41\1\116\1\uffff\1\117\1\41\1\117\4\41\2\125\2\uffff\2\126\2\127\1\41\3\uffff\1\131\1\uffff";
     static final String DFA12_eofS =
-        "\125\uffff";
+        "\132\uffff";
     static final String DFA12_minS =
-        "\1\11\1\75\2\uffff\1\157\1\117\1\141\1\101\1\165\1\125\1\56\13\uffff\1\116\1\122\7\uffff\2\75\3\uffff\1\165\1\144\1\125\1\104\1\154\1\114\1\122\1\154\1\114\2\uffff\1\104\1\60\4\uffff\1\145\1\141\1\105\1\101\1\163\1\123\1\101\1\154\1\114\1\60\1\uffff\1\60\1\171\1\60\1\131\1\145\1\105\1\114\2\60\2\uffff\4\60\1\114\3\uffff\1\60\1\uffff";
+        "\1\11\1\75\2\uffff\1\157\1\117\1\141\1\101\1\165\1\125\1\56\12\uffff\1\75\1\uffff\1\116\1\122\4\uffff\1\76\1\uffff\2\75\3\uffff\1\165\1\144\1\125\1\104\1\154\1\114\1\122\1\154\1\114\5\uffff\1\104\1\60\6\uffff\1\145\1\141\1\105\1\101\1\163\1\123\1\101\1\154\1\114\1\60\1\uffff\1\60\1\171\1\60\1\131\1\145\1\105\1\114\2\60\2\uffff\4\60\1\114\3\uffff\1\60\1\uffff";
     static final String DFA12_maxS =
-        "\1\175\1\75\2\uffff\1\162\1\122\1\141\1\117\1\165\1\125\1\56\13\uffff\1\116\1\122\7\uffff\2\75\3\uffff\1\165\1\144\1\125\1\104\1\154\1\114\1\122\1\154\1\114\2\uffff\1\104\1\172\4\uffff\1\145\1\141\1\105\1\101\1\163\1\123\1\101\1\154\1\114\1\172\1\uffff\1\172\1\171\1\172\1\131\1\145\1\105\1\114\2\172\2\uffff\4\172\1\114\3\uffff\1\172\1\uffff";
+        "\1\175\1\75\2\uffff\1\162\1\122\1\141\1\117\1\165\1\125\1\56\12\uffff\1\76\1\uffff\1\116\1\122\4\uffff\1\76\1\uffff\2\75\3\uffff\1\165\1\144\1\125\1\104\1\154\1\114\1\122\1\154\1\114\5\uffff\1\104\1\172\6\uffff\1\145\1\141\1\105\1\101\1\163\1\123\1\101\1\154\1\114\1\172\1\uffff\1\172\1\171\1\172\1\131\1\145\1\105\1\114\2\172\2\uffff\4\172\1\114\3\uffff\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\2\uffff\1\2\1\3\7\uffff\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\2\uffff\1\27\1\30\1\31\1\32\1\34\1\35\1\36\2\uffff\1\44\1\33\1\1\11\uffff\1\11\1\43\2\uffff\1\37\1\41\1\40\1\42\12\uffff\1\26\11\uffff\1\25\1\4\5\uffff\1\6\1\7\1\5\1\uffff\1\10";
+        "\2\uffff\1\2\1\3\7\uffff\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\uffff\1\26\2\uffff\1\31\1\32\1\33\1\36\1\uffff\1\41\2\uffff\1\47\1\35\1\1\11\uffff\1\11\1\46\1\24\1\34\1\25\2\uffff\1\37\1\40\1\42\1\44\1\43\1\45\12\uffff\1\30\11\uffff\1\27\1\4\5\uffff\1\6\1\7\1\5\1\uffff\1\10";
     static final String DFA12_specialS =
-        "\125\uffff}>";
+        "\132\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\2\3\2\uffff\1\3\22\uffff\1\3\1\1\1\uffff\1\30\1\22\2\uffff\1\14\1\23\1\24\1\36\1\34\1\25\1\35\1\12\1\20\12\2\1\15\1\uffff\1\37\1\33\1\40\1\21\1\13\1\26\4\41\1\7\7\41\1\11\1\27\4\41\1\5\6\41\1\16\1\uffff\1\17\2\41\1\uffff\5\41\1\6\7\41\1\10\5\41\1\4\6\41\1\31\1\uffff\1\32",
+            "\2\3\2\uffff\1\3\22\uffff\1\3\1\1\1\uffff\1\31\1\22\2\uffff\1\14\1\23\1\24\1\36\1\34\1\26\1\35\1\12\1\20\12\2\1\15\1\uffff\1\37\1\25\1\40\1\21\1\13\1\27\4\41\1\7\7\41\1\11\1\30\4\41\1\5\6\41\1\16\1\uffff\1\17\2\41\1\uffff\5\41\1\6\7\41\1\10\5\41\1\4\6\41\1\32\1\uffff\1\33",
             "\1\42",
             "",
             "",
@@ -1455,65 +1541,70 @@ public class InternalReactiveLexer extends Lexer {
             "",
             "",
             "",
+            "\1\60\1\57",
             "",
-            "\1\57",
-            "\1\60",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\61",
+            "\1\62",
             "\1\63",
             "",
             "",
             "",
-            "\1\65",
+            "",
+            "\1\64",
+            "",
             "\1\66",
-            "\1\67",
             "\1\70",
-            "\1\71",
+            "",
+            "",
+            "",
             "\1\72",
             "\1\73",
             "\1\74",
             "\1\75",
-            "",
-            "",
             "\1\76",
+            "\1\77",
+            "\1\100",
+            "\1\101",
+            "\1\102",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\103",
             "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
             "",
             "",
             "",
             "",
-            "\1\100",
-            "\1\101",
-            "\1\102",
-            "\1\103",
-            "\1\104",
+            "",
+            "",
             "\1\105",
             "\1\106",
             "\1\107",
             "\1\110",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\1\111",
+            "\1\112",
             "\1\113",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
             "\1\114",
             "\1\115",
-            "\1\116",
-            "\1\117",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
             "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
             "",
-            "",
             "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\1\120",
             "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\1\121",
+            "\1\122",
             "\1\123",
+            "\1\124",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "",
+            "",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\1\130",
             "",
             "",
             "",
@@ -1551,7 +1642,7 @@ public class InternalReactiveLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( RULE_NOT | RULE_NUMBER | RULE_WS | RULE_TRUE | RULE_FALSE | RULE_NULL | RULE_TODAY | RULE_FORALL | RULE_PARENT | RULE_AT | RULE_LITERALSTRING | RULE_COLON | RULE_SQBRACKET_OPEN | RULE_SQBRACKET_CLOSE | RULE_TML_SEPARATOR | RULE_TML_EXISTS | RULE_DOLLAR | RULE_BRACKET_OPEN | RULE_BRACKET_CLOSE | RULE_COMMA | RULE_AND | RULE_OR | RULE_HASH | RULE_CURLYOPEN | RULE_CURLYCLOSE | RULE_EQUALSEQUALS | RULE_NEQUALS | RULE_PLUS | RULE_MINUS | RULE_MULTIPLY | RULE_LTEQ | RULE_GTEQ | RULE_LT | RULE_GT | RULE_DOT | RULE_ID );";
+            return "1:1: Tokens : ( RULE_NOT | RULE_NUMBER | RULE_WS | RULE_TRUE | RULE_FALSE | RULE_NULL | RULE_TODAY | RULE_FORALL | RULE_PARENT | RULE_AT | RULE_LITERALSTRING | RULE_COLON | RULE_SQBRACKET_OPEN | RULE_SQBRACKET_CLOSE | RULE_TML_SEPARATOR | RULE_TML_EXISTS | RULE_DOLLAR | RULE_BRACKET_OPEN | RULE_BRACKET_CLOSE | RULE_HEADER | RULE_EQUALS | RULE_COMMA | RULE_AND | RULE_OR | RULE_HASH | RULE_CURLYOPEN | RULE_CURLYCLOSE | RULE_EQUALSEQUALS | RULE_NEQUALS | RULE_PLUS | RULE_PIPE | RULE_MINUS | RULE_MULTIPLY | RULE_LTEQ | RULE_GTEQ | RULE_LT | RULE_GT | RULE_DOT | RULE_ID );";
         }
     }
  

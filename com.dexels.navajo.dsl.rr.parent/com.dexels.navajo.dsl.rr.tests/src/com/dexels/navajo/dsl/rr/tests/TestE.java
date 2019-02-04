@@ -15,7 +15,6 @@ import com.google.inject.Inject;
 @RunWith(XtextRunner.class)
 @InjectWith(ReactiveInjectorProvider.class)
 @ExtendWith(InjectionExtension.class)
-@SuppressWarnings("all")
 public class TestE {
 	
 	@Inject

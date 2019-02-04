@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalReactiveParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_DOT", "RULE_PARENT", "RULE_TML_SEPARATOR", "RULE_SQBRACKET_OPEN", "RULE_AT", "RULE_SQBRACKET_CLOSE", "RULE_TML_EXISTS", "RULE_OR", "RULE_AND", "RULE_EQUALSEQUALS", "RULE_NEQUALS", "RULE_LT", "RULE_GT", "RULE_LTEQ", "RULE_GTEQ", "RULE_PLUS", "RULE_MULTIPLY", "RULE_NOT", "RULE_MINUS", "RULE_BRACKET_OPEN", "RULE_BRACKET_CLOSE", "RULE_COMMA", "RULE_NUMBER", "RULE_HASH", "RULE_LITERALSTRING", "RULE_FORALL", "RULE_CURLYOPEN", "RULE_CURLYCLOSE", "RULE_NULL", "RULE_TODAY", "RULE_TRUE", "RULE_FALSE", "RULE_WS", "RULE_COLON", "RULE_DOLLAR"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_DOT", "RULE_PARENT", "RULE_TML_SEPARATOR", "RULE_SQBRACKET_OPEN", "RULE_AT", "RULE_SQBRACKET_CLOSE", "RULE_TML_EXISTS", "RULE_OR", "RULE_AND", "RULE_EQUALSEQUALS", "RULE_NEQUALS", "RULE_LT", "RULE_GT", "RULE_LTEQ", "RULE_GTEQ", "RULE_PLUS", "RULE_MULTIPLY", "RULE_NOT", "RULE_MINUS", "RULE_BRACKET_OPEN", "RULE_BRACKET_CLOSE", "RULE_COMMA", "RULE_NUMBER", "RULE_HASH", "RULE_LITERALSTRING", "RULE_FORALL", "RULE_CURLYOPEN", "RULE_CURLYCLOSE", "RULE_NULL", "RULE_TODAY", "RULE_TRUE", "RULE_FALSE", "RULE_WS", "RULE_COLON", "RULE_DOLLAR", "RULE_HEADER", "RULE_EQUALS", "RULE_PIPE"
     };
     public static final int RULE_LITERALSTRING=29;
     public static final int RULE_DOLLAR=39;
@@ -35,6 +35,7 @@ public class InternalReactiveParser extends AbstractInternalAntlrParser {
     public static final int RULE_AND=13;
     public static final int RULE_HASH=28;
     public static final int RULE_FORALL=30;
+    public static final int RULE_EQUALS=41;
     public static final int RULE_TRUE=35;
     public static final int RULE_TODAY=34;
     public static final int RULE_PLUS=20;
@@ -54,10 +55,12 @@ public class InternalReactiveParser extends AbstractInternalAntlrParser {
     public static final int RULE_COLON=38;
     public static final int RULE_NEQUALS=15;
     public static final int RULE_NUMBER=27;
+    public static final int RULE_HEADER=40;
     public static final int RULE_MULTIPLY=21;
     public static final int RULE_MINUS=23;
     public static final int RULE_LT=16;
     public static final int RULE_LTEQ=18;
+    public static final int RULE_PIPE=42;
     public static final int RULE_FALSE=36;
     public static final int RULE_BRACKET_OPEN=24;
 

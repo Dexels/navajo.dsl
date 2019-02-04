@@ -1749,6 +1749,10 @@ RULE_BRACKET_OPEN : '(';
 
 RULE_BRACKET_CLOSE : ')';
 
+RULE_HEADER : '=>';
+
+RULE_EQUALS : '=';
+
 RULE_COMMA : ',';
 
 RULE_AND : 'AND';
@@ -1766,6 +1770,8 @@ RULE_EQUALSEQUALS : '==';
 RULE_NEQUALS : '!=';
 
 RULE_PLUS : '+';
+
+RULE_PIPE : '->';
 
 RULE_MINUS : '-';
 

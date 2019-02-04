@@ -51,19 +51,21 @@ terminal BRACKET_OPEN:
 terminal BRACKET_CLOSE:
 	')'
 ;
-
+terminal HEADER:
+	'=>'
+;
+terminal EQUALS:
+	'='
+;
 terminal COMMA:
 	','
 ;
-
 terminal AND:
 	'AND'
 ;
-
 terminal OR:
 	'OR'
 ;
-
 terminal HASH:
 	'#'
 ;
@@ -79,9 +81,11 @@ terminal EQUALSEQUALS:
 terminal NEQUALS:
 	'!='
 ;
-
 terminal PLUS:
 	'+'
+;
+terminal PIPE:
+	'->'
 ;
 terminal MINUS:
 	'-'
@@ -89,25 +93,21 @@ terminal MINUS:
 terminal MULTIPLY:
 	'*'
 ;
-
 terminal LTEQ:
 	'<='
 ;
-
 terminal GTEQ:
 	'>='
 ;
 terminal LT:
 	'<'
 ;
-
 terminal GT:
 	'>'
 ;
 terminal DOT:
 	'.'
 ;
-
 terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 
@@ -118,22 +118,18 @@ PathElement returns ecore::EString:
 TmlExpression returns TmlReference:
 	SQBRACKET_OPEN (absolute?=TML_SEPARATOR)? (param?=AT)? elements+=PathElement (TML_SEPARATOR elements+=PathElement)* SQBRACKET_CLOSE
 ;
-
 ExistsTmlExpression returns ExistsTmlReference: 
 	TML_EXISTS SQBRACKET_OPEN (absolute?=TML_SEPARATOR)? (param?=AT)? elements+=PathElement (TML_SEPARATOR elements+=PathElement)* SQBRACKET_CLOSE
 ;
-
 OrExpression returns Expression:
-    parameters+=AndExpression ({OrExpression.left=current} operations+= OR parameters+=AndExpression )*;
-    
+    parameters+=AndExpression ({OrExpression.left=current} operations+= OR parameters+=AndExpression )*
+;    
 AndExpression returns Expression:
      parameters+=EqualityExpression (operations+= AND parameters+=EqualityExpression )*
-     ;  
-
+;  
 EqualityExpression returns Expression: 
      parameters+=RelationalExpression ((operations+= EQUALSEQUALS parameters+=RelationalExpression) | (operations+=NEQUALS parameters+=RelationalExpression))?
 ;     
-  
 // Skipped for now. Trouble with overloaded '<' stuff  
 RelationalExpression returns Expression: 
    {Expression} parameters+=AdditiveExpression ((operations+=LT parameters+=AdditiveExpression)|(operations+=GT parameters+=AdditiveExpression)|(operations+=LTEQ parameters+=AdditiveExpression)|(operations+=GTEQ parameters+=AdditiveExpression))?

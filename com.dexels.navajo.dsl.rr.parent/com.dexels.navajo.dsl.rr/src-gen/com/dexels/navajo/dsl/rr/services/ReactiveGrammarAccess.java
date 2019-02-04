@@ -974,6 +974,8 @@ public class ReactiveGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tDOLLAR;
 	private final TerminalRule tBRACKET_OPEN;
 	private final TerminalRule tBRACKET_CLOSE;
+	private final TerminalRule tHEADER;
+	private final TerminalRule tEQUALS;
 	private final TerminalRule tCOMMA;
 	private final TerminalRule tAND;
 	private final TerminalRule tOR;
@@ -983,6 +985,7 @@ public class ReactiveGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tEQUALSEQUALS;
 	private final TerminalRule tNEQUALS;
 	private final TerminalRule tPLUS;
+	private final TerminalRule tPIPE;
 	private final TerminalRule tMINUS;
 	private final TerminalRule tMULTIPLY;
 	private final TerminalRule tLTEQ;
@@ -1032,6 +1035,8 @@ public class ReactiveGrammarAccess extends AbstractGrammarElementFinder {
 		this.tDOLLAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "com.dexels.navajo.dsl.rr.Reactive.DOLLAR");
 		this.tBRACKET_OPEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "com.dexels.navajo.dsl.rr.Reactive.BRACKET_OPEN");
 		this.tBRACKET_CLOSE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "com.dexels.navajo.dsl.rr.Reactive.BRACKET_CLOSE");
+		this.tHEADER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "com.dexels.navajo.dsl.rr.Reactive.HEADER");
+		this.tEQUALS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "com.dexels.navajo.dsl.rr.Reactive.EQUALS");
 		this.tCOMMA = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "com.dexels.navajo.dsl.rr.Reactive.COMMA");
 		this.tAND = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "com.dexels.navajo.dsl.rr.Reactive.AND");
 		this.tOR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "com.dexels.navajo.dsl.rr.Reactive.OR");
@@ -1041,6 +1046,7 @@ public class ReactiveGrammarAccess extends AbstractGrammarElementFinder {
 		this.tEQUALSEQUALS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "com.dexels.navajo.dsl.rr.Reactive.EQUALSEQUALS");
 		this.tNEQUALS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "com.dexels.navajo.dsl.rr.Reactive.NEQUALS");
 		this.tPLUS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "com.dexels.navajo.dsl.rr.Reactive.PLUS");
+		this.tPIPE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "com.dexels.navajo.dsl.rr.Reactive.PIPE");
 		this.tMINUS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "com.dexels.navajo.dsl.rr.Reactive.MINUS");
 		this.tMULTIPLY = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "com.dexels.navajo.dsl.rr.Reactive.MULTIPLY");
 		this.tLTEQ = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "com.dexels.navajo.dsl.rr.Reactive.LTEQ");
@@ -1213,6 +1219,18 @@ public class ReactiveGrammarAccess extends AbstractGrammarElementFinder {
 		return tBRACKET_CLOSE;
 	}
 	
+	//terminal HEADER:
+	//	'=>';
+	public TerminalRule getHEADERRule() {
+		return tHEADER;
+	}
+	
+	//terminal EQUALS:
+	//	'=';
+	public TerminalRule getEQUALSRule() {
+		return tEQUALS;
+	}
+	
 	//terminal COMMA:
 	//	',';
 	public TerminalRule getCOMMARule() {
@@ -1265,6 +1283,12 @@ public class ReactiveGrammarAccess extends AbstractGrammarElementFinder {
 	//	'+';
 	public TerminalRule getPLUSRule() {
 		return tPLUS;
+	}
+	
+	//terminal PIPE:
+	//	'->';
+	public TerminalRule getPIPERule() {
+		return tPIPE;
 	}
 	
 	//terminal MINUS:
